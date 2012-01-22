@@ -6,19 +6,20 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TicketsOn by ExtEdu team</name>
-	<dependencies>
+		<dependencies>
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-core</artifactId>
 			<version>2.3.1.1</version>
-		</dependency>
+			</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.14</version>
 		</dependency>
 	</dependencies>
-	<build>
+	
+		<build>
 		<finalName>ticketson2</finalName>
 		<plugins>
 			<plugin>
