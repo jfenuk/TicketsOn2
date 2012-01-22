@@ -7,7 +7,7 @@
 
 	<constant name="struts.devMode" value="true" />
 
-	<package name="basicstruts2" extends="struts-default">
+	<package name="ticketson" extends="struts-default">
 
 		<action name="index">
 			<result>/index.jsp</result>
