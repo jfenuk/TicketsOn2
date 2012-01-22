@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="ticketDao" class="com.extedu.ticketson2.model.dao.hibernate.TicketDaoHibernate" />
-<bean id="ticketMgr" class="com.extedu.ticketson2.service.TicketMgrImpl">
-<property name="ticketDao" ref="ticketDao"></property>
-</bean>
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    	<property name="location" value="/WEB-INF/classes/properties/com/extedu/ticketson2/model/datasource.properties"/>
+  	</bean>
+
+
+
+	<bean id="ticketDao"
+		class="com.extedu.ticketson2.model.dao.hibernate.TicketDaoHibernate">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+     
+    <property name="mappingResources">
+      <list>
+        <value>config/com/extedu/ticketson2/model/entity/User.hbm.xml</value>
+        <value>config/com/extedu/ticketson2/model/entity/Ticket.hbm.xml</value>
+      </list>
+    </property>
+    
+    <property name="hibernateProperties">
+      <props>
+        <prop key="hibernate.query.factory_class">org.hibernate.hql.ast.ASTQueryTranslatorFactory</prop>
+        <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+        <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+        <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+        <prop key="hibernate.connection.charset">${encoding}</prop>
+        <prop key="hibernate.connection.provider_class">${hibernate.connection.provider_class}</prop>
+        <prop key="hibernate.connection.release_mode">auto</prop>
+        
+        <prop key="hibernate.cache.use_query_cache">${hibernate.use_query_cache}</prop>
+        <prop key="hibernate.cache.use_second_level_cache">${hibernate.use_second_level_cache}</prop>
+      </props>
+    </property>
+  </bean>
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<bean id="ticketMgr" class="com.extedu.ticketson2.service.TicketMgrImpl">
+		<property name="ticketDao" ref="ticketDao"></property>
+	</bean>
 </beans>

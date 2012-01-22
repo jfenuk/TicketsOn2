@@ -11,16 +11,20 @@ public class TicketAction extends ActionSupport {
 
 	private TicketMgr ticketMgr;
 	private Ticket ticket;
-	
+
 	public String execute() throws Exception {
-		
-			
+
 		ticket = ticketMgr.getTicketById(1L);
-		ticket.setId(1l);
-		ticket.setTitle("title");
-		ticket.setDescription("Description");
-		
-		return SUCCESS;
+
+		if (null == ticket)
+
+			return ERROR;
+		else
+			
+		{
+			System.out.println(ticketMgr.getAll().size());
+			return SUCCESS;
+			}
 	}
 
 	public void setTicketMgr(TicketMgr ticketMgr) {
