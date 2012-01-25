@@ -22,10 +22,12 @@ public class TicketDaoHibernate extends HibernateDaoSupport implements
 
 	public void remove(long id) {
 
-		getHibernateTemplate().delete(entity)
-		getHibernateTemplate().get(Ticket.class, id);
+		getHibernateTemplate().delete(
+				getHibernateTemplate().get(Ticket.class, id));
+
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Ticket> getAll() {
 
 		return getHibernateTemplate().find("from Ticket");
@@ -34,6 +36,12 @@ public class TicketDaoHibernate extends HibernateDaoSupport implements
 	public void saveTicket(Ticket ticket) {
 
 		getHibernateTemplate().saveOrUpdate(ticket);
+
+	}
+
+	public void remove(Ticket persistent) {
+
+		getHibernateTemplate().delete(persistent);
 
 	}
 }
