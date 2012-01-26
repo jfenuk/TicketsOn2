@@ -2,7 +2,6 @@ package com.extedu.ticketson2.view.action;
 
 import com.extedu.ticketson2.model.entity.Ticket;
 import com.extedu.ticketson2.service.TicketMgr;
-import com.extedu.ticketson2.service.TicketMgrImpl;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class TicketAction extends ActionSupport {
@@ -14,17 +13,10 @@ public class TicketAction extends ActionSupport {
 
 	public String execute() throws Exception {
 
-		ticket = ticketMgr.getTicketById(1L);
+		ticket = ticketMgr.get(1L);
 
-		if (null == ticket)
+		return SUCCESS;
 
-			return ERROR;
-		else
-			
-		{
-			System.out.println(ticketMgr.getAll().size());
-			return SUCCESS;
-			}
 	}
 
 	public void setTicketMgr(TicketMgr ticketMgr) {

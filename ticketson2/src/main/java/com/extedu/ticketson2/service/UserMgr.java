@@ -4,7 +4,11 @@ import com.extedu.ticketson2.model.entity.User;
 
 public interface UserMgr {
 
-	public User getUserById(final long id);
+	public User get(final Long id);
 
-	public void saveUser(User user);
+	public void save(User user);
+
+	public void remove(Long id);
+
+	public void remove(User user);
 }

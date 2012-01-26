@@ -3,25 +3,31 @@ package com.extedu.ticketson2.service;
 import com.extedu.ticketson2.model.dao.UserDao;
 import com.extedu.ticketson2.model.entity.User;
 
-public class UserMgrImpl implements UserMgr{
+public class UserMgrImpl implements UserMgr {
 
 	UserDao userDao;
-	
-	public void setUserDao (UserDao userDao)
-	{
+
+	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
+
 	}
-	
-	public User getUserById (final long id)
-	{
-		System.out.println("UserMgr: Get User By Id...");
-		return userDao.getUserById(id);
+
+	public User get(Long id) {
+		return userDao.get(id);
+
 	}
-	
-	public void saveUser(User user){
-		
-		System.out.println("USerMgr: User saved...");
-		userDao.saveUser(user);
-	};
-	
+
+	public void save(User user) {
+		userDao.save(user);
+
+	}
+
+	public void remove(Long id) {
+		userDao.remove(id);
+	}
+
+	public void remove(User user) {
+		userDao.remove(user);
+	}
+
 }

@@ -1,13 +1,15 @@
 package com.extedu.ticketson2.service;
 
-import java.util.List;
-
 import com.extedu.ticketson2.model.entity.Ticket;
 
 public interface TicketMgr {
-	
-	public Ticket getTicketById(final long id);
-	public void saveTicket(Ticket ticket);
-	public List<Ticket>getAll();
+
+	public Ticket get(final Long id);
+
+	public void save(Ticket ticket);
+
+	public void remove(Long id);
+
+	public void remove(Ticket ticket);
 
 }

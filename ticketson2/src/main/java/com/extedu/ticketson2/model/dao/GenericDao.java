@@ -1,19 +1,17 @@
 package com.extedu.ticketson2.model.dao;
 
-import java.util.List;
+import java.io.Serializable;
 
 import com.extedu.ticketson2.model.entity.Persistent;
 
-public interface Dao<T extends Persistent> {
+public interface GenericDao<T extends Persistent, ID extends Serializable> {
 
-	public T get(long id);
+	public T get(ID id);
 
 	public void save(T persistent);
 
-	public void remove(long id);
+	public void remove(ID id);
 
 	public void remove(T persistent);
-
-	public List<T> getAll();
 
 }
