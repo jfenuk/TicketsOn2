@@ -53,4 +53,7 @@
 	<bean id="ticketMgr" class="com.extedu.ticketson2.service.TicketMgrImpl">
 		<property name="ticketDao" ref="ticketDao"></property>
 	</bean>
+	
+	<bean id="TicketAction" class="com.extedu.ticketson2.view.action.TicketAction">
+	</bean>
 </beans>

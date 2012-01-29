@@ -2,7 +2,7 @@ package com.extedu.ticketson2.model.entity;
 
 import java.io.Serializable;
 
-public class User extends PersistentImpl implements Persistent, Serializable {
+public class User extends PersistentImpl implements Serializable {
 
 	private static final long serialVersionUID = 7177014660621405534L;
 

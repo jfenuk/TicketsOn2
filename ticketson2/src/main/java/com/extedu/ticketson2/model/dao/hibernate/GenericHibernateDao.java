@@ -1,14 +1,13 @@
 package com.extedu.ticketson2.model.dao.hibernate;
 
 import java.io.Serializable;
-
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.extedu.ticketson2.model.dao.GenericDao;
 import com.extedu.ticketson2.model.entity.Persistent;
 
-public class GenericHibernateDao<T extends Persistent, ID extends Serializable> extends
-		HibernateDaoSupport implements GenericDao<T, ID> {
+public class GenericHibernateDao<T extends Persistent, ID extends Serializable>
+		extends HibernateDaoSupport implements GenericDao<T, ID> {
 
 	private Class<T> persistentClass;
 

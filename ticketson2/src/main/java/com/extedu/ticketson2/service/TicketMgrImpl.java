@@ -1,5 +1,7 @@
 package com.extedu.ticketson2.service;
 
+import java.util.List;
+
 import com.extedu.ticketson2.model.dao.TicketDao;
 import com.extedu.ticketson2.model.entity.Ticket;
 
@@ -31,6 +33,10 @@ public class TicketMgrImpl implements TicketMgr {
 
 		ticketDao.remove(ticket);
 
+	}
+
+	public List<Ticket> getAll() {
+		return ticketDao.getAll();
 	}
 
 }

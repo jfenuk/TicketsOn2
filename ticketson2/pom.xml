@@ -53,7 +53,7 @@
 				<version>1.1</version>
 				<configuration>
 					<server>tomcat</server>
-					<url>http://localhost:8080/manager/text</url>
+					<url>http://localhost:8080/manager/html</url>
 				</configuration>
 			</plugin>
 		</plugins>

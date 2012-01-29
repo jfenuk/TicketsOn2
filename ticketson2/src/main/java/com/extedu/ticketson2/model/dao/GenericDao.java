@@ -6,12 +6,12 @@ import com.extedu.ticketson2.model.entity.Persistent;
 
 public interface GenericDao<T extends Persistent, ID extends Serializable> {
 
-	public T get(ID id);
+	T get(ID id);
 
-	public void save(T persistent);
+	void save(T persistent);
 
-	public void remove(ID id);
+	void remove(ID id);
 
-	public void remove(T persistent);
+	void remove(T persistent);
 
 }

@@ -2,9 +2,11 @@ package com.extedu.ticketson2.model.dao.hibernate;
 
 import java.util.List;
 
+import com.extedu.ticketson2.model.dao.TicketDao;
 import com.extedu.ticketson2.model.entity.Ticket;
 
-public class TicketDaoHibernate extends GenericHibernateDao<Ticket, Long> {
+public class TicketDaoHibernate extends GenericHibernateDao<Ticket, Long>
+		implements TicketDao {
 
 	public TicketDaoHibernate() {
 

@@ -14,10 +14,15 @@
 		</action>
 
 		<action name="ticket"
-			class="com.extedu.ticketson2.view.action.TicketAction" method="execute">
+			class="TicketAction" method="execute">
 			<result name="success">/pages/ticket.jsp</result>
 			<result name = "error">/index.jsp</result>
 		</action>
+		
+		 <action name="list" method="execute" class="TicketAction">
+            <result>pages/list.jsp</result>
+            <result name="input">pages/list.jsp</result>
+        </action>
 
 
 
