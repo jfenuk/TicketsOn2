@@ -2,8 +2,8 @@ package com.extedu.ticketson2.model.entity;
 
 public interface Persistent {
 
-	long getId();
+	Long getId();
 
-	void setId(long id);
+	void setId(Long id);
 
 }

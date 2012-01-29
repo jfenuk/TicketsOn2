@@ -13,13 +13,15 @@ public class TicketAction extends ActionSupport {
 
 	private TicketMgr ticketMgr;
 	private List<Ticket> tickets;
+	private Long id;
+	private Ticket ticket;
 
-	public String execute() throws Exception {
+	public Ticket getTicket() {
+		return this.ticket;
+	}
 
-		this.tickets = ticketMgr.getAll();
-
-		return Action.SUCCESS;
-
+	public void setTicket(Ticket ticket) {
+		this.ticket = ticket;
 	}
 
 	public List<Ticket> getTickets() {
@@ -29,6 +31,47 @@ public class TicketAction extends ActionSupport {
 
 	public void setTicketMgr(TicketMgr ticketMgr) {
 		this.ticketMgr = ticketMgr;
+	}
+
+	public Long getId() {
+		return this.id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	// Use Prepare Interseptor!
+
+	public String list() throws Exception {
+
+		tickets = ticketMgr.getAll();
+
+		return Action.SUCCESS;
+
+	}
+
+	public String view() throws Exception {
+
+		ticketMgr.get(id);
+		return Action.SUCCESS;
+	}
+
+	public String edit(Ticket ticket) throws Exception{
+		ticketMgr.save(ticket);
+		return this.list();
+	}
+
+	public String remove() throws Exception {
+
+		ticketMgr.remove(id);
+		return this.list();
+	}
+
+	public String save() throws Exception {
+
+		this.ticketMgr.save(this.ticket);
+		return this.list();
 	}
 
 }

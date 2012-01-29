@@ -9,8 +9,7 @@
 </head>
 <body>
 <h1>Welcome To TicketsOn 2!</h1>
-<p><a href="<s:url action='ticket'/>">Ticket</a></p>
 
-<p><a href="<s:url action='list'/>">Tickets List</a></p>
+<p><a href="<s:url action='listTicket'/>">Your Tickets!</a></p>
 </body>
 </html>

@@ -13,19 +13,30 @@
 			<result>/index.jsp</result>
 		</action>
 
-		<action name="ticket"
-			class="TicketAction" method="execute">
-			<result name="success">/pages/ticket.jsp</result>
-			<result name = "error">/index.jsp</result>
+		<action name="listTicket" class="TicketAction" method="list">
+			<result>pages/list.jsp</result>
+			<result name="input">pages/list.jsp</result>
 		</action>
-		
-		 <action name="list" method="execute" class="TicketAction">
-            <result>pages/list.jsp</result>
-            <result name="input">pages/list.jsp</result>
-        </action>
 
+		<action name="viewTicket" class="TicketAction" method="view">
+			<result>pages/list.jsp</result>
+			<result name="input">pages/list.jsp</result>
+		</action>
 
+		<action name="editTicket" class="TicketAction" method="edit">
+			<result>pages/list.jsp</result>
+			<result name="input">pages/list.jsp</result>
+		</action>
 
+		<action name="saveTicket" class="TicketAction" method="save">
+			<result>pages/list.jsp</result>
+			<result name="input">pages/list.jsp</result>
+		</action>
+
+		<action name="removeTicket" class="TicketAction" method="remove">
+			<result>pages/list.jsp</result>
+			<result name="input">pages/list.jsp</result>
+		</action>
 	</package>
 
 </struts>

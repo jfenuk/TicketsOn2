@@ -2,13 +2,13 @@ package com.extedu.ticketson2.model.entity;
 
 public abstract class PersistentImpl implements Persistent{
 
-	private long id;
+	private Long id;
 
-	public long getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

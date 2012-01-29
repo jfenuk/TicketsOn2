@@ -55,5 +55,6 @@
 	</bean>
 	
 	<bean id="TicketAction" class="com.extedu.ticketson2.view.action.TicketAction">
+	<property name="ticketMgr" ref="ticketMgr"></property>
 	</bean>
 </beans>
